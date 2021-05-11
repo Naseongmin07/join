@@ -1,0 +1,29 @@
+{% include "../layout/top.html" %}
+<table>
+    <tr>
+        <td>id</td>
+        <td>userid</td>
+        <td>userpw</td>
+        <td>username</td>
+        <td>gender</td>
+        <td>userimage</td>
+        <td>userdt</td>
+    </tr>
+    {% for index in userList %}
+    <tr>
+        <td>{{index.id}}</td>
+        <td>{{index.userid}}</td>
+        <td>{{index.userpw}}</td>
+        <td>{{index.username}}</td>
+        {% if index.gender == true %}
+            <td>여</td>
+        {% else %}
+            <td>남</td>
+        {% endif %}
+        <td>{{index.userimage}}</td>
+        <td>{{index.userdt}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% include "../layout/bottom.html" %}
+
